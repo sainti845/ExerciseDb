@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=11, initial-scale=1.0" />
+  <title>PlusFit</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+   <!-- SWIPER CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+   <!-- NORMAL CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <nav class="container-fluid">
+    <!-- <img src="" alt=""><i class="fa-light fa-dumbbell"></i> -->
+    <h1 class="heading"></i>PlusFit</h1>
+    <a href="#home" class="nav-home">Home</a>
+    <a href="#explore-exercises " class="nav-exercise">Exercises</a>
+    <a href="#footer">Contact</a>
+  </nav>
+
+  <article class="overview">
+  <div class="main" id="home">
+    <div class="left ">
+      <h1>The <span class="text-primary">Body Achieves</span> What The <span class="text-primary"> Mind</span> Believes.
+      </h1><br><br>
+      <h3>Check Out The Most Effective Exercises.</h3>
+       <a class="btn btn-outline-primary my-3" href="#collection" >Explore More</a>
+    </div>
+    <div class="right">
+      <img src="images/pose-muscle-muscle-rod-press-hd-wallpaper-preview.jpg" alt="" class="img-fluid landscape">
+        <img src="images/C-Bum-Wallpapers-573x1024.jpg" class="img-fluid potrait hidden " alt="">
+    </div>
+  </div>
+ 
+  <div class="searchBox ">
+    <input type="text" class="input " placeholder="Enter exercise">
+    <button class="search ">Search</button>
+  </div>
+
+  <!-- <div id="explore-exercise">
+    <div class="exercise-type" id="10" ><img src="images/all1.png" >
+    <p>All</p>
+    </div>
+    <div class="exercise-type" id="0"><img src="images/back.png" class="btn"><p>Back</p></div>
+     <div class="exercise-type" id="1"><img src="images/cardio1.png" class="btn" ><p>Cardio</p></div>
+    <div class="exercise-type" id="2"><img src="images/chest1.png" class="btn"><p>Chest</p></div>
+    <div class="exercise-type" id="6"><img src="images/shoulder.png" class="btn"><p>Shoulders</p></div>
+    <div class="exercise-type" id="3"><img src="images/lower arm.png" class="btn"><p>Lower Arms</p></div>
+    <div class="exercise-type" id="4"><img src="images/lowerleg.png"class="btn" ><p>Lower Legs</p></div>
+    <div class="exercise-type" id="5"><img src="images/neck.png" class="btn"><p>Neck</p></div>
+    <div class="exercise-type" id="7"><img src="images/upperarm.png" class="btn"><p>Upper Arms</p></div>
+    <div class="exercise-type" id="8"><img src="images/upperleg.png" class="btn"><p>Upper Legs</p></div>
+    <div class="exercise-type" id="9"><img src="images/waist.png" class="btn"><p>Waist</p></div>
+  </div> -->
+  <div class="swiper mySwiper" id="explore-exercises">
+      <div class=" swiper-wrapper">
+        <div class="exercise-type1 swiper-slide" id="10" ><img src="images/all1.png" > <p>All</p></div>
+        <div class="exercise-type1 swiper-slide" id="0"><img src="images/back.png" class="btn"> <p>Back</p></div>
+        <div class="exercise-type1 swiper-slide" id="1"><img src="images/cardio1.png" class="btn" ><p>Cardio</p></div>
+        <div class="exercise-type1 swiper-slide" id="2"><img src="images/chest1.png" class="btn"><p>Chest</p></div>
+        <div class="exercise-type1 swiper-slide" id="6"><img src="images/shoulder.png" class="btn"><p>Shoulders</p></div>
+        <div class="exercise-type1 swiper-slide" id="3"><img src="images/lower arm.png" class="btn"><p>Lower Arms</p></div>
+        <div class="exercise-type1 swiper-slide" id="4"><img src="images/lowerleg.png"class="btn" ><p>Lower Legs</p></div>
+        <div class="exercise-type1 swiper-slide" id="5"><img src="images/neck.png" class="btn"><p>Neck</p></div>
+        <div class="exercise-type1 swiper-slide" id="7"><img src="images/upperarm.png" class="btn"><p>Upper Arms</p></div>
+        <div class="exercise-type1 swiper-slide" id="8"><img src="images/upperleg.png" class="btn"><p>Upper Legs</p></div>
+        <div class="exercise-type1 swiper-slide" id="9"><img src="images/waist.png" class="btn"><p>Waist</p></div>
+ 
+      </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <div class="exercise-collection" id="collection">
+  </div>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <button class="page-link" id="prevButton" >Prev</button>
+      </li>
+      <li class="page-item">
+        <button class="page-link" id="nextButton">Next</button>
+      </li>
+    </ul>
+  </nav>
+</article>
+
+<article class="lower hidden">
+  <section class="specific ">
+       <div class="specificExercise ">
+         <div class="leftpart">
+           <img src="http://d205bpvrqc9yn1.cloudfront.net/0001.gif" alt="">
+         </div>
+         <div class="rightpart">
+           <h1>Exercise name</h1>
+            <p class="">This exercise helps you to be fit by targetting your <span class="text-primary">abs</span>. This also helps you to be better <span class="text-warning">version of yourself</span>.</p>
+         </div>
+       </div>
+       <div>
+      </section>
+      
+      
+</article>
+
+</section>
+  <footer id="footer">
+    <div class="row text-center">
+      <div class="col-md-4 footer">
+        <p> <a href="https://www.instagram.com/_ayush.kapruwan__/"><i class="fa-brands fa-instagram"></i></a></p>
+      
+      </div>
+      <div class="col-md-4 footer">
+        <p><a href="https://github.com/sainti845"><i class="fa-brands fa-github"></i></a></p>
+        
+      </div>
+      <div class="col-md-4 footer">
+        <p><a href="https://www.linkedin.com/in/ayush-kapruwan-96117a213/"><i class="fa-brands fa-linkedin"></i></a></p>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

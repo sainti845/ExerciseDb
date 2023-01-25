@@ -1,0 +1,265 @@
+.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  background-color: rgb(51, 51, 167);
+  color: white;
+  text-align: center;
+  align-items: center;
+}
+.container-fluid h1 {
+  margin-right: auto;
+  margin-left: 1rem;
+}
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 2rem;
+}
+a:hover {
+  color: rgb(255, 255, 255);
+  font-weight: 900;
+  background-color: rgb(20, 21, 21);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.main {
+  height: 90vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /* align-items: center; */
+}
+.main img {
+  height: 90vh !important;
+  /* width: 30% !important; */
+}
+.left {
+  width: 20%;
+  padding: 6% 10%;
+  flex: 40%;
+  background: url("images/background1.webp");
+}
+.right {
+  flex: 60%;
+}
+.exercise-collection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.card {
+  width: 300px;
+  margin: 3% 5%;
+
+  box-shadow: 1px 1px 7px #786d6d;
+}
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  justify-content: center;
+}
+.pagination-number,
+.pagination-button {
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: none;
+  margin: 0.25rem 0.25rem;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 0.2rem;
+}
+.pagination-number:hover,
+.pagination-button:not(.disabled):hover {
+  background: #fff;
+}
+.pagination-number.active {
+  color: #fff;
+  background: #0085b6;
+}
+
+.searchBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+input[type="text"] {
+  height: 7vh;
+  width: 400px;
+  min-width: 250px;
+  text-align: center;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 8px;
+  margin: 4%;
+}
+
+.search {
+  background-color: rgb(51, 51, 167);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  margin: 4%;
+  height: 50px;
+  width: 100px;
+  padding: 0.5rem 1rem;
+  transition: width 1s;
+}
+.search:hover {
+  width: 10%;
+}
+
+.card-body button {
+  margin: 2% 3%;
+}
+
+#explore-exercise {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 3%;
+}
+
+.exercise-type {
+  height: 30vh;
+  text-align: center;
+  color: rgb(37, 36, 34);
+  margin: 1%;
+}
+.exercise-type p {
+  font-weight: 700;
+}
+.exercise-type img {
+  border-radius: 50%;
+  width: 126px;
+  flex: 10%;
+  height: 126px;
+}
+
+.footer {
+  color: white;
+  font-size: 30px;
+}
+
+footer {
+  background-color: black;
+  padding: 3%;
+}
+
+.rightpart p {
+  font-size: 30px;
+}
+
+.specificExercise {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5%;
+  align-items: center;
+  margin: 3% auto;
+  border-radius: 8px;
+  box-shadow: 5px 5px 22px black;
+  width: 90%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.leftpart {
+  flex: 55%;
+}
+.rightpart {
+  flex: 40%;
+}
+.leftpart img {
+  width: 80%;
+}
+
+@media (max-width: 800px) {
+  .leftpart {
+    flex: unset;
+    flex: 100%;
+  }
+  input[type="text"] {
+    min-width: unset;
+  }
+}
+@media (max-width: 450px) {
+  .left {
+    flex: unset;
+    flex: 60%;
+  }
+  .right {
+    height: 40vh;
+  }
+  .searchBox {
+    margin-top: 24vh;
+  }
+  iframe {
+    width: 90%;
+  }
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700 !important;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper {
+  padding: 6% 5%;
+  box-shadow: 5px 4px 13px grey;
+  border-radius: 9px;
+  margin: 0 4%;
+  width: 94%;
+}
+
+.exercise-heading {
+  margin: 10% 23% 5% !important;
+}
+
+.mansi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  box-shadow: 3px 1px 13px grey;
+  width: 90%;
+  margin: 4% auto;
+  border-radius: 14px;
+}
+.mansi div {
+  margin: 3% 0;
+}
