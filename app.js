@@ -17,6 +17,22 @@ let apiFeature = 0;
 let specificExercise = [];
 let bodypart;
 
+/***********************HAMBURGER FEATURE****************/
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-link").forEach((n) =>
+  n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  })
+);
+
 /**************FETCHING DATA*************/
 const options = {
   method: "GET",
@@ -38,8 +54,9 @@ async function getSpecificData(exerciseSearch) {
   let fetchURL = `https://youtube-v31.p.rapidapi.com/search?q=${exerciseSearch}&part=snippet%2Cid&maxResults=4`;
   const url = await fetch(fetchURL, options1);
   const res = await url.json();
-  console.log(res.items);
+  // console.log(res.items);
   videos = [...res.items];
+  console.log(videos);
 }
 
 async function getData() {
@@ -72,7 +89,6 @@ function createCard(data) {
  </div>`;
   exerciseCollection.appendChild(html);
   html.addEventListener("click", () => {
-    console.log("yo bro who gotcha smiling like that!!");
     specificCard.innerHTML = "";
     createSpecificard(data);
     lower.classList.remove("hidden");
@@ -80,38 +96,110 @@ function createCard(data) {
   });
 }
 
+const secondpagetemplete = (data) => {
+  return `
+  
+  <div class="">
+
+  
+  <section class="specific ">
+       <div class="specificExercise ">
+         <div class="leftpart">
+           <img src="${data.gifUrl}" alt="">
+         </div>
+         <div class="rightpart">
+           <h1> ${data.name}</h1>
+            <p class="">This exercise helps you to be fit by targetting your <span class="text-primary">${
+              data.target
+            }</span>. This also helps you to be better <span class="text-warning">version of yourself</span>.</p>
+         </div>
+       </div>
+
+     
+       <div>
+        
+      </section>
+
+
+      <section class="mansi">
+
+        <h1 class="text-primary exercise-heading">Videos that might be useful for you.</h1>
+          ${videos.map(
+            (item) =>
+              ` <div class="slide">
+              <iframe
+                width="320"
+                height="180"
+                src="https://www.youtube.com/embed/${item.id.videoId}"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen=""
+              ></iframe>
+            </div>`
+          )}
+      </section>
+    </div>
+  `;
+};
+const loader = () => {
+  return `
+
+  <div id="preloader">
+
+  
+  </div>
+  `;
+};
 /**************CREATING SPECIFIC CARD OF EXERCISE*************/
 async function createSpecificard(data) {
-  console.log("hello moto");
   apiFeature = 4;
 
-  const html = document.createElement("div");
-  html.classList.add("specificExercise");
-  html.innerHTML = "";
-  html.innerHTML = ` 
-  <div class="leftpart">
-    <img src="${data.gifUrl}" alt="">
-  </div>
-  <div class="rightpart">
-    <h1>${data.name}</h1>
-     <p class="">This exercise helps you to be fit by targetting your <span class="text-primary">${data.target}</span>. This also helps you to be better <span class="text-warning">version of yourself</span>.</p>
-  </div>`;
-  specificCard.appendChild(html);
+  // console.log(removemansi);
+  // const html = document.createElement("div");
+  // html.classList.add("specificExercise");
+  // html.innerHTML = "";
+  // html.innerHTML = `
+  // <div class="leftpart">
+  //   <img src="${data.gifUrl}" alt="">
+  // </div>
+  // <div class="rightpart">
+  //   <h1>${data.name}</h1>
+  //    <p class="">This exercise helps you to be fit by targetting your <span class="text-primary">${data.target}</span>. This also helps you to be better <span class="text-warning">version of yourself</span>.</p>
+  // </div>`;
+  // console.log(lower);
+  // lower.innerHTML = null;
+
+  // specificCard.appendChild(html);
+  lower.innerHTML = null;
+
+  lower.innerHTML = loader();
   await getSpecificData(`${data.name}`);
-  const lowerSection = document.createElement("section");
-  lowerSection.classList.add("mansi");
+  // const lowerSection = document.createElement("section");
+  // console.log(lower);
+  // const mansi = lower.getElementsByClassName("mansi");
+  // console.log(mansi);
 
-  lowerSection.innerHTML = `<h1 class="text-primary exercise-heading">Videos that might be useful for you.</h1>`;
+  // for (var i = mansi.length - 1; i >= 0; --i) {
+  //   mansi[i].remove();
+  // }
+  // lowerSection.classList.add("mansi");
 
-  videos.forEach((video) => {
-    console.log(video);
-    const html1 = document.createElement("div");
-    html1.classList.add("slide");
-    html1.innerHTML = "";
-    html1.innerHTML = `<iframe width="320" height="180" src="https://www.youtube.com/embed/${video.id.videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-    lowerSection.appendChild(html1);
-  });
-  lower.appendChild(lowerSection);
+  // lowerSection.innerHTML = `<h1 class="text-primary exercise-heading">Videos that might be useful for you.</h1>`;
+
+  // videos.forEach((video) => {
+  //   console.log(video);
+  //   const html1 = document.createElement("div");
+  //   html1.classList.add("slide");
+  //   html1.innerHTML = "";
+  //   html1.innerHTML = `<iframe width="320" height="180" src="https://www.youtube.com/embed/${video.id.videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+  //   lowerSection.appendChild(html1);
+  // });
+  // lower.innerHTML = null;
+
+  const htmlpage = secondpagetemplete(data);
+  lower.innerHTML = null;
+  lower.innerHTML = htmlpage;
 }
 
 function createSpecificExerciseVideo() {
@@ -194,11 +282,15 @@ document
 
 window.addEventListener("load", () => {
   apiFeature = 1;
+  exerciseCollection.innerHTML = null;
+  exerciseCollection.innerHTML = loader();
   renderData();
+  document.querySelector("#preloader").classList.add("hidden");
 });
 
 let potraitResolution = true;
 let landscapeResolution = true;
+
 window.addEventListener("resize", () => {
   console.log(screen.width);
   if (screen.width < 500) {
