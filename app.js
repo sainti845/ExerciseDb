@@ -37,7 +37,7 @@ document.querySelectorAll(".nav-link").forEach((n) =>
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "9f85b9c537msh6b643c8f3c7baf8p1c6bc6jsn65a5c18831a9",
+    "X-RapidAPI-Key": "c9e3832670mshe83d54350da2933p1de219jsn6c2fe36914ea",
     "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
   },
 };
