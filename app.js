@@ -56,7 +56,7 @@ async function getSpecificData(exerciseSearch) {
   const res = await url.json();
   // console.log(res.items);
   videos = [...res.items];
-  console.log(videos);
+  // console.log(videos);
 }
 
 async function getData() {
@@ -203,7 +203,7 @@ async function createSpecificard(data) {
 }
 
 function createSpecificExerciseVideo() {
-  console.log(videosCollection);
+  // console.log(videosCollection);
 }
 
 /**************CREATING INDIVIDUAL CARD OF EXERCISES COMPLETED*************/
@@ -225,7 +225,7 @@ async function renderData(page = 1) {
   if (apiFeature == 1 || apiFeature == 3) {
     await getData();
   }
-  console.log(exercises);
+  // console.log(exercises);
 
   if (apiFeature == 1 || apiFeature == 3) {
     exercises
@@ -238,7 +238,7 @@ async function renderData(page = 1) {
   }
 
   if (apiFeature == 2) {
-    console.log("hello ayush");
+    // console.log("hello ayush");
     specificExercise
       .filter((row, index) => {
         let start = (currentPage - 1) * pageSize;
@@ -292,7 +292,7 @@ let potraitResolution = true;
 let landscapeResolution = true;
 
 window.addEventListener("resize", () => {
-  console.log(screen.width);
+  // console.log(screen.width);
   if (screen.width < 500) {
     document.querySelector(".landscape").classList.add("hidden");
     document.querySelector(".potrait").classList.remove("hidden");
@@ -314,7 +314,7 @@ search.addEventListener("click", function () {
       a++;
     }
   });
-  console.log(specificExercise);
+  // console.log(specificExercise);
   if (a == 0)
     window.alert(
       "Exercise is not present💣💣!Try searching for another one✨✨."
@@ -343,14 +343,14 @@ for (let i = 0; i < exerciseType.length; i++) {
     function (e) {
       e.preventDefault();
 
-      console.log(exerciseType[i].id);
+      // console.log(exerciseType[i].id);
       if (exerciseType[i].id == 10) {
         apiFeature = 1;
         renderData();
       } else {
         bodypart = exerciseType[i].children[1];
-        console.log(bodypart.innerHTML);
-        console.log("hello1");
+        // console.log(bodypart.innerHTML);
+        // console.log("hello1");
         apiFeature = 3;
         renderData();
       }
